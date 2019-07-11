@@ -28,11 +28,14 @@ class CardHolder {
   }
 
   generateHand() {
-    const newhand = this.hand.map(this.randomizedCards);
-    console.log(newhand);
-    return newhand;
+    const newHand = [];
+    this.hand.forEach(element => {
+        element = this.randomizedCards();
+        newHand.push(element);
+    }
+    return newHand;
   }
-}
+
 
 const player = new CardHolder();
 
