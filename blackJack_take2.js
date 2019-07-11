@@ -24,6 +24,7 @@ const dealer = new CardHolder('Dealer', handGenerator(suit, weight));
 const player = new CardHolder('Player', handGenerator(suit, weight));
 
 function handGenerator(suitArr, weightArr) {
+  // if this array were built as 2 arrays within arrays it may be more helpful for determining a winner
   const newHand = [
     `${weight[randomNumberGenerator(weightArr)]} ${
       suit[randomNumberGenerator(suitArr)]
@@ -42,8 +43,8 @@ function randomNumberGenerator(arr) {
 
 function checkForWinner(dealerHand, playerHand) {
   if (
-    `${dealerHand[0][0] + dealerHand[1][0]} > ${playerHand[0][0] +
-      playerHand[1][0]}`
+    dealerHand.split(' ')[0][0] + dealerHand.split(' ')[1][0] >
+    playerHand.split(' ')[0][0] + playerHand[1][0]
   ) {
     console.log('Dealer Wins!');
   } else {
