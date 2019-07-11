@@ -25,18 +25,30 @@ const player = new CardHolder('Player', handGenerator(suit, weight));
 
 function handGenerator(suitArr, weightArr) {
   const newHand = [
-    `${suit[randomNumberGenerator(suitArr)]} ${
-      weight[randomNumberGenerator(weightArr)]
+    `${weight[randomNumberGenerator(weightArr)]} ${
+      suit[randomNumberGenerator(suitArr)]
     }`,
-    `${suit[randomNumberGenerator(suitArr)]} ${
-      weight[randomNumberGenerator(weightArr)]
+    `${weight[randomNumberGenerator(weightArr)]} ${
+      suit[randomNumberGenerator(suitArr)]
     }`,
   ];
+  // const newHandWeight = newHand[0][0] + newHand[1][0];
   return newHand;
 }
 
 function randomNumberGenerator(arr) {
   return Math.floor(Math.random() * arr.length);
+}
+
+function checkForWinner(dealerHand, playerHand) {
+  if (
+    `${dealerHand[0][0] + dealerHand[1][0]} > ${playerHand[0][0] +
+      playerHand[1][0]}`
+  ) {
+    console.log('Dealer Wins!');
+  } else {
+    console.log('Player Wins!');
+  }
 }
 
 // console.log(handGenerator(suit, weight));
@@ -49,3 +61,7 @@ console.log(`${dealer.hand}`);
 console.log(`${player.name} has:`);
 console.log(`${player.hand}`);
 console.log('-------------------------------');
+console.log(dealer.hand[0][0]);
+console.log(dealer.hand[1][0]);
+console.log(dealer.hand[0][0] + dealer.hand[1][0]);
+console.log(checkForWinner(dealer.hand, player.hand));
