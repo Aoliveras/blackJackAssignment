@@ -1,5 +1,5 @@
 /** Blackjack as a functional approach
- * Goal: Outputs 4 cards, 2 to dealer and 2 to player
+ * MVP Goal: Outputs 4 cards, 2 to dealer and 2 to player
  */
 
 const readlinesync = require('readline-sync');
@@ -71,10 +71,13 @@ function showHand(hand) {
 function getResults(playerTotal, dealerTotal) {
   if (playerTotal > dealerTotal && playerTotal <= 21) {
     console.log(`Player Wins! ${playerTotal} to ${dealerTotal}`);
+    console.log('');
   } else if (playerTotal < dealerTotal) {
     console.log(`Dealer wins ${dealerTotal} to ${playerTotal}`);
+    console.log('');
   } else {
     console.log('draw');
+    console.log('');
   }
 }
 
@@ -103,6 +106,7 @@ function blackJack() {
   showHand(joinedPlayer);
   console.log(`Dealer: ${dealerTotal}`);
   showHand(joinedDealer);
+  console.log('');
 
   // To allow the player hit if they want
   let bool = playerTotal !== 21;
@@ -117,9 +121,12 @@ function blackJack() {
         showHand(joinedPlayer);
         playerTotal = getTotal(playerWeight);
         console.log(`You have ${playerTotal}`);
+        console.log('');
+
         // Getting new results!
         if (playerTotal > 21) {
           console.log(`BUST! You lose  ${playerTotal}`);
+          console.log('');
           break;
         } else if (playerTotal === 21) {
           bool = false;
