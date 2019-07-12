@@ -1,0 +1,23 @@
+{
+  "name": "blackjack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blackJack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node blackJack_Func.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aoliveras/blackJackAssignment.git"
+  },
+  "author": "Dandy Reyes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aoliveras/blackJackAssignment/issues"
+  },
+  "homepage": "https://github.com/Aoliveras/blackJackAssignment#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
+}
